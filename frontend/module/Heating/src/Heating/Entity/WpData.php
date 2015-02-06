@@ -15,1250 +15,591 @@ class WpData
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="OperatingMode", type="integer", nullable=false)
      */
-    private $id;
+    private $operatingmode;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ADC_ErrorEnabled", type="integer", nullable=false)
+     */
+    private $adcErrorenabled;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="DomesticWaterTNominal", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $domesticwatertnominal;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timestamp", type="datetime", nullable=false)
+     * @ORM\Column(name="LastStartDate", type="datetime", nullable=false)
      */
-    private $timestamp = 'CURRENT_TIMESTAMP';
+    private $laststartdate;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="FailureTempFlow", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="FailureCondensationPress", type="float", precision=10, scale=0, nullable=false)
      */
-    private $failuretempflow;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="WarningsDiv", type="integer", nullable=false)
-     */
-    private $warningsdiv;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="PoolTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $pooltempnominal;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="SolarTempNominalMin", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $solartempnominalmin;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="ReturnTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $returntempnominal;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="AuxiliaryHeatMode", type="integer", nullable=false)
-     */
-    private $auxiliaryheatmode;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatCharacteristicLimit", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatcharacteristiclimit;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHDomesticWaterCompressor", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohdomesticwatercompressor;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="HeatOff", type="integer", nullable=false)
-     */
-    private $heatoff;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="PSourcePump", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $psourcepump;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="Hysteresis", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $hysteresis;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Pincode", type="integer", nullable=false)
-     */
-    private $pincode;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHCooling", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohcooling;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CondensationTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $condensationtemp;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="ModemType", type="integer", nullable=false)
-     */
-    private $modemtype;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHCompressor2", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohcompressor2;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="PoolMaxRunTime", type="integer", nullable=false)
-     */
-    private $poolmaxruntime;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="RoomTempFactor", type="integer", nullable=false)
-     */
-    private $roomtempfactor;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SourcePumpPreRunPeriod", type="integer", nullable=false)
-     */
-    private $sourcepumpprerunperiod;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHPoolCompressor", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohpoolcompressor;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="ScreedTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $screedtempnominal;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="HeatingUpScreed", type="integer", nullable=false)
-     */
-    private $heatingupscreed;
+    private $failurecondensationpress;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="DomesticWaterTimeOff", type="time", nullable=false)
+     * @ORM\Column(name="LastStartTime", type="datetime", nullable=false)
      */
-    private $domesticwatertimeoff;
+    private $laststarttime;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="CoolCharacteristicSetPointBaseTemp", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $coolcharacteristicsetpointbasetemp;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="Failure", type="integer", nullable=false)
+     * @ORM\Column(name="DebugCh1", type="integer", nullable=false)
      */
-    private $failure;
+    private $debugch1;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="SuctionGasTemp", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $suctiongastemp;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="ServicePool", type="integer", nullable=false)
+     * @ORM\Column(name="ADC_ErrorHiLo", type="integer", nullable=false)
      */
-    private $servicepool;
+    private $adcErrorhilo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="PoolTimeDelayOnSolar", type="integer", nullable=false)
+     * @ORM\Column(name="SelectedADC", type="integer", nullable=false)
      */
-    private $pooltimedelayonsolar;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="LegionellaTimeOn", type="time", nullable=false)
-     */
-    private $legionellatimeon;
+    private $selectedadc;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="DWNumberOfCompressors", type="integer", nullable=false)
+     * @ORM\Column(name="ModemStatus", type="integer", nullable=false)
      */
-    private $dwnumberofcompressors;
+    private $modemstatus;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="CoolCharacteristicGradient", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $coolcharacteristicgradient;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ADC_CorrFct", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $adcCorrfct;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="CoolCharacteristicLimit", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $coolcharacteristiclimit;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="WarningsOthers", type="integer", nullable=false)
+     * @ORM\Column(name="ServiceStatus", type="integer", nullable=false)
      */
-    private $warningsothers;
+    private $servicestatus;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="Pelectric", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="FailureEvaporationPress", type="float", precision=10, scale=0, nullable=false)
      */
-    private $pelectric;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="AuxilaryModeHeating", type="integer", nullable=false)
-     */
-    private $auxilarymodeheating;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CondensationPress", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $condensationpress;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="FailureTempPool", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretemppool;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OperatingHoursValue", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $operatinghoursvalue;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="EvaporationPress", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $evaporationpress;
+    private $failureevaporationpress;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="PoolOff", type="integer", nullable=false)
+     * @ORM\Column(name="ADC_Enabled", type="integer", nullable=false)
      */
-    private $pooloff;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatSourceOut", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatsourceout;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatTempHyst", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heattemphyst;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="DOManualOperatingModeOn", type="string", length=16, nullable=false)
-     */
-    private $domanualoperatingmodeon;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="SolarTempActual", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $solartempactual;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="LCD_Display_Line_1", type="string", length=16, nullable=false)
-     */
-    private $lcdDisplayLine1;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="WarningInMask", type="string", length=16, nullable=false)
-     */
-    private $warninginmask;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHDomesticWaterAuxilary", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohdomesticwaterauxilary;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="DomesticWaterTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $domesticwatertemp;
+    private $adcEnabled;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="SelectedValue", type="integer", nullable=false)
+     * @ORM\Column(name="ADC_Result", type="integer", nullable=false)
      */
-    private $selectedvalue;
+    private $adcResult;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHHeatingCompressor", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohheatingcompressor;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="SolarTempHyst", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $solartemphyst;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="SolarTimeOn", type="time", nullable=false)
-     */
-    private $solartimeon;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SolarOff", type="integer", nullable=false)
-     */
-    private $solaroff;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="ServiceAuxiliaryHeating", type="integer", nullable=false)
-     */
-    private $serviceauxiliaryheating;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatingCircuitTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatingcircuittemp;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OffsetPn", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $offsetpn;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatCharacteristicGradient", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatcharacteristicgradient;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="LCD_Display_Line_2", type="string", length=16, nullable=false)
-     */
-    private $lcdDisplayLine2;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SoftwareReset", type="integer", nullable=false)
-     */
-    private $softwarereset;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="HeatingPumpPreRunPeriod", type="integer", nullable=false)
-     */
-    private $heatingpumpprerunperiod;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ManufSerialNum", type="string", length=16, nullable=false)
-     */
-    private $manufserialnum;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="NDStatus", type="integer", nullable=false)
-     */
-    private $ndstatus;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatSourceIn", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatsourcein;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="SolarTimeOff", type="time", nullable=false)
-     */
-    private $solartimeoff;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CharacteristicGradient", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $characteristicgradient;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatReturnTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatreturntemp;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Ta", type="integer", nullable=false)
-     */
-    private $ta;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="DomesticWaterTimeDelayOnSolar", type="integer", nullable=false)
-     */
-    private $domesticwatertimedelayonsolar;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="OperatingStartTime", type="time", nullable=false)
-     */
-    private $operatingstarttime;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="CoolTimeOn", type="time", nullable=false)
-     */
-    private $cooltimeon;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="CommMode", type="integer", nullable=false)
-     */
-    private $commmode;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHHeatingAuxilary", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohheatingauxilary;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="SetManufSerialNum", type="string", length=16, nullable=false)
-     */
-    private $setmanufserialnum;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="SetManufType", type="string", length=16, nullable=false)
-     */
-    private $setmanuftype;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OHSolar", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $ohsolar;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="DomesticWaterTimeOn", type="time", nullable=false)
-     */
-    private $domesticwatertimeon;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="Kp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $kp;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="AutomaticOffDownUpSwitch", type="integer", nullable=false)
-     */
-    private $automaticoffdownupswitch;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="WarningsInput", type="integer", nullable=false)
-     */
-    private $warningsinput;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SolarSensor", type="integer", nullable=false)
-     */
-    private $solarsensor;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="RoomTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $roomtempnominal;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="HeatIncreaseTimeOn", type="time", nullable=false)
-     */
-    private $heatincreasetimeon;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="FailureTimeStampDATE", type="datetime", nullable=false)
-     */
-    private $failuretimestampdate;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OutdoorTemp24h", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $outdoortemp24h;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="WarningsOutput", type="integer", nullable=false)
-     */
-    private $warningsoutput;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="PoolTimeOff", type="time", nullable=false)
-     */
-    private $pooltimeoff;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="ServiceDomesticWater", type="integer", nullable=false)
-     */
-    private $servicedomesticwater;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="HeatCharacteristicSetPointBaseTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatcharacteristicsetpointbasetemp;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="CoolOff", type="integer", nullable=false)
-     */
-    private $cooloff;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="LngSelect", type="integer", nullable=false)
-     */
-    private $lngselect;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="NumberOfCompressors", type="integer", nullable=false)
-     */
-    private $numberofcompressors;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="View", type="integer", nullable=false)
-     */
-    private $view;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="FailureTempOutdoor", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempoutdoor;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="ExtControlCode", type="integer", nullable=false)
-     */
-    private $extcontrolcode;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="OperatingHoursSelector", type="integer", nullable=false)
-     */
-    private $operatinghoursselector;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="PoolNumberOfCompressors", type="integer", nullable=false)
-     */
-    private $poolnumberofcompressors;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="FirmwareDate", type="string", length=16, nullable=false)
-     */
-    private $firmwaredate;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="HeatingPumpAfterRunPeriod", type="integer", nullable=false)
-     */
-    private $heatingpumpafterrunperiod;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SelectedYear", type="integer", nullable=false)
-     */
-    private $selectedyear;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="FailureTempDomesticWater", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempdomesticwater;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="SetDefaultSettings", type="integer", nullable=false)
-     */
-    private $setdefaultsettings;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="CyclicMeasurementPeriod", type="integer", nullable=false)
-     */
-    private $cyclicmeasurementperiod;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CoolReturnTempHyst", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $coolreturntemphyst;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CharacteristicLimit", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $characteristiclimit;
 
     /**
-     * @var float
+     * Set operatingmode
      *
-     * @ORM\Column(name="PoolTempHyst", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $pooltemphyst;
-
-    /**
-     * @var float
+     * @param integer $operatingmode
      *
-     * @ORM\Column(name="SunctionGasTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $sunctiongastemp;
+    public function setOperatingmode($operatingmode)
+    {
+        $this->operatingmode = $operatingmode;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="RoomTemp1h", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $roomtemp1h;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get operatingmode
      *
-     * @ORM\Column(name="ServiceCooling", type="integer", nullable=false)
+     * @return integer
      */
-    private $servicecooling;
+    public function getOperatingmode()
+    {
+        return $this->operatingmode;
+    }
 
     /**
-     * @var string
+     * Set adcErrorenabled
      *
-     * @ORM\Column(name="ManufType", type="string", length=16, nullable=false)
-     */
-    private $manuftype;
-
-    /**
-     * @var \DateTime
+     * @param integer $adcErrorenabled
      *
-     * @ORM\Column(name="CoolTimeOff", type="time", nullable=false)
+     * @return WpData
      */
-    private $cooltimeoff;
+    public function setAdcErrorenabled($adcErrorenabled)
+    {
+        $this->adcErrorenabled = $adcErrorenabled;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CoolCharacteristicSetPoint", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $coolcharacteristicsetpoint;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get adcErrorenabled
      *
-     * @ORM\Column(name="OHCompressor1", type="float", precision=10, scale=0, nullable=false)
+     * @return integer
      */
-    private $ohcompressor1;
+    public function getAdcErrorenabled()
+    {
+        return $this->adcErrorenabled;
+    }
 
     /**
-     * @var float
+     * Set domesticwatertnominal
      *
-     * @ORM\Column(name="FailureTempSuctionGas", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempsuctiongas;
-
-    /**
-     * @var float
+     * @param float $domesticwatertnominal
      *
-     * @ORM\Column(name="DomesticWaterTempNominal", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $domesticwatertempnominal;
+    public function setDomesticwatertnominal($domesticwatertnominal)
+    {
+        $this->domesticwatertnominal = $domesticwatertnominal;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Ringtones", type="integer", nullable=false)
-     */
-    private $ringtones;
+        return $this;
+    }
 
     /**
-     * @var \DateTime
+     * Get domesticwatertnominal
      *
-     * @ORM\Column(name="HeatIncreaseTimeOff", type="time", nullable=false)
+     * @return float
      */
-    private $heatincreasetimeoff;
+    public function getDomesticwatertnominal()
+    {
+        return $this->domesticwatertnominal;
+    }
 
     /**
-     * @var float
+     * Set laststartdate
      *
-     * @ORM\Column(name="AuxilaryMaxDifference", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $auxilarymaxdifference;
-
-    /**
-     * @var float
+     * @param \DateTime $laststartdate
      *
-     * @ORM\Column(name="FlowTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $flowtemp;
+    public function setLaststartdate($laststartdate)
+    {
+        $this->laststartdate = $laststartdate;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="OperatingStopTime", type="time", nullable=false)
-     */
-    private $operatingstoptime;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get laststartdate
      *
-     * @ORM\Column(name="Tn", type="integer", nullable=false)
+     * @return \DateTime
      */
-    private $tn;
+    public function getLaststartdate()
+    {
+        return $this->laststartdate;
+    }
 
     /**
-     * @var float
+     * Set failurecondensationpress
      *
-     * @ORM\Column(name="AuxiliaryHeatTempLimitSourceIn", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $auxiliaryheattemplimitsourcein;
-
-    /**
-     * @var integer
+     * @param float $failurecondensationpress
      *
-     * @ORM\Column(name="WarningOutMask", type="integer", nullable=false)
+     * @return WpData
      */
-    private $warningoutmask;
+    public function setFailurecondensationpress($failurecondensationpress)
+    {
+        $this->failurecondensationpress = $failurecondensationpress;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="OutdoorTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $outdoortemp;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get failurecondensationpress
      *
-     * @ORM\Column(name="Interruption", type="integer", nullable=false)
+     * @return float
      */
-    private $interruption;
+    public function getFailurecondensationpress()
+    {
+        return $this->failurecondensationpress;
+    }
 
     /**
-     * @var float
+     * Set laststarttime
      *
-     * @ORM\Column(name="DomesticWaterTempActual", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $domesticwatertempactual;
-
-    /**
-     * @var float
+     * @param \DateTime $laststarttime
      *
-     * @ORM\Column(name="HeatReturnTempNominal", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $heatreturntempnominal;
+    public function setLaststarttime($laststarttime)
+    {
+        $this->laststarttime = $laststarttime;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="DomesticWaterOff", type="integer", nullable=false)
-     */
-    private $domesticwateroff;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get laststarttime
      *
-     * @ORM\Column(name="FailureEvaporationTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return \DateTime
      */
-    private $failureevaporationtemp;
+    public function getLaststarttime()
+    {
+        return $this->laststarttime;
+    }
 
     /**
-     * @var float
+     * Set coolcharacteristicsetpointbasetemp
      *
-     * @ORM\Column(name="CoolReturnTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $coolreturntempnominal;
-
-    /**
-     * @var integer
+     * @param float $coolcharacteristicsetpointbasetemp
      *
-     * @ORM\Column(name="ServiceSolar", type="integer", nullable=false)
+     * @return WpData
      */
-    private $servicesolar;
+    public function setCoolcharacteristicsetpointbasetemp($coolcharacteristicsetpointbasetemp)
+    {
+        $this->coolcharacteristicsetpointbasetemp = $coolcharacteristicsetpointbasetemp;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="FailureTempHeatSourceOut", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempheatsourceout;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get coolcharacteristicsetpointbasetemp
      *
-     * @ORM\Column(name="SolarTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return float
      */
-    private $solartemp;
+    public function getCoolcharacteristicsetpointbasetemp()
+    {
+        return $this->coolcharacteristicsetpointbasetemp;
+    }
 
     /**
-     * @var float
+     * Set debugch1
      *
-     * @ORM\Column(name="FailureTempSolar", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempsolar;
-
-    /**
-     * @var float
+     * @param integer $debugch1
      *
-     * @ORM\Column(name="HeatCharacteristicSetPoint", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $heatcharacteristicsetpoint;
+    public function setDebugch1($debugch1)
+    {
+        $this->debugch1 = $debugch1;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="Refrigerant", type="integer", nullable=false)
-     */
-    private $refrigerant;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get debugch1
      *
-     * @ORM\Column(name="OffsetPh", type="float", precision=10, scale=0, nullable=false)
+     * @return integer
      */
-    private $offsetph;
+    public function getDebugch1()
+    {
+        return $this->debugch1;
+    }
 
     /**
-     * @var float
+     * Set suctiongastemp
      *
-     * @ORM\Column(name="HeatIncreaseSetPtOffset", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $heatincreasesetptoffset;
-
-    /**
-     * @var float
+     * @param float $suctiongastemp
      *
-     * @ORM\Column(name="ReturnTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $returntemp;
+    public function setSuctiongastemp($suctiongastemp)
+    {
+        $this->suctiongastemp = $suctiongastemp;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="TimeScaler", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $timescaler;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get suctiongastemp
      *
-     * @ORM\Column(name="SolarTempReturn", type="float", precision=10, scale=0, nullable=false)
+     * @return float
      */
-    private $solartempreturn;
+    public function getSuctiongastemp()
+    {
+        return $this->suctiongastemp;
+    }
 
     /**
-     * @var \DateTime
+     * Set adcErrorhilo
      *
-     * @ORM\Column(name="HeatTimeOn", type="time", nullable=false)
-     */
-    private $heattimeon;
-
-    /**
-     * @var float
+     * @param integer $adcErrorhilo
      *
-     * @ORM\Column(name="OutdoorTemp1h", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $outdoortemp1h;
+    public function setAdcErrorhilo($adcErrorhilo)
+    {
+        $this->adcErrorhilo = $adcErrorhilo;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="FailureTempReturn", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $failuretempreturn;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get adcErrorhilo
      *
-     * @ORM\Column(name="EvaporationTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return integer
      */
-    private $evaporationtemp;
+    public function getAdcErrorhilo()
+    {
+        return $this->adcErrorhilo;
+    }
 
     /**
-     * @var integer
+     * Set selectedadc
      *
-     * @ORM\Column(name="ServiceMixer", type="integer", nullable=false)
-     */
-    private $servicemixer;
-
-    /**
-     * @var float
+     * @param integer $selectedadc
      *
-     * @ORM\Column(name="PowerValue", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $powervalue;
+    public function setSelectedadc($selectedadc)
+    {
+        $this->selectedadc = $selectedadc;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="WarningOthersMask", type="integer", nullable=false)
-     */
-    private $warningothersmask;
+        return $this;
+    }
 
     /**
-     * @var \DateTime
+     * Get selectedadc
      *
-     * @ORM\Column(name="PoolTimeOn", type="time", nullable=false)
+     * @return integer
      */
-    private $pooltimeon;
+    public function getSelectedadc()
+    {
+        return $this->selectedadc;
+    }
 
     /**
-     * @var integer
+     * Set modemstatus
      *
-     * @ORM\Column(name="ADC_Error", type="integer", nullable=false)
-     */
-    private $adcError;
-
-    /**
-     * @var string
+     * @param integer $modemstatus
      *
-     * @ORM\Column(name="FailureOperatingMode", type="string", length=16, nullable=false)
+     * @return WpData
      */
-    private $failureoperatingmode;
+    public function setModemstatus($modemstatus)
+    {
+        $this->modemstatus = $modemstatus;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CoolReturnTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $coolreturntemp;
+        return $this;
+    }
 
     /**
-     * @var \DateTime
+     * Get modemstatus
      *
-     * @ORM\Column(name="LegionellaTimeOff", type="time", nullable=false)
+     * @return integer
      */
-    private $legionellatimeoff;
+    public function getModemstatus()
+    {
+        return $this->modemstatus;
+    }
 
     /**
-     * @var \DateTime
+     * Set coolcharacteristicgradient
      *
-     * @ORM\Column(name="RTCTime", type="datetime", nullable=false)
-     */
-    private $rtctime;
-
-    /**
-     * @var \DateTime
+     * @param float $coolcharacteristicgradient
      *
-     * @ORM\Column(name="RTCDate", type="datetime", nullable=false)
+     * @return WpData
      */
-    private $rtcdate;
+    public function setCoolcharacteristicgradient($coolcharacteristicgradient)
+    {
+        $this->coolcharacteristicgradient = $coolcharacteristicgradient;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="FirmwareVersion", type="string", length=16, nullable=false)
-     */
-    private $firmwareversion;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get coolcharacteristicgradient
      *
-     * @ORM\Column(name="Pthermal", type="float", precision=10, scale=0, nullable=false)
+     * @return float
      */
-    private $pthermal;
+    public function getCoolcharacteristicgradient()
+    {
+        return $this->coolcharacteristicgradient;
+    }
 
     /**
-     * @var float
+     * Set adcCorrfct
      *
-     * @ORM\Column(name="RoomTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $roomtemp;
-
-    /**
-     * @var float
+     * @param float $adcCorrfct
      *
-     * @ORM\Column(name="HeatingCircuitNominal", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $heatingcircuitnominal;
+    public function setAdcCorrfct($adcCorrfct)
+    {
+        $this->adcCorrfct = $adcCorrfct;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="FailureDIBuffer", type="integer", nullable=false)
-     */
-    private $failuredibuffer;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get adcCorrfct
      *
-     * @ORM\Column(name="COP", type="float", precision=10, scale=0, nullable=false)
+     * @return float
      */
-    private $cop;
+    public function getAdcCorrfct()
+    {
+        return $this->adcCorrfct;
+    }
 
     /**
-     * @var integer
+     * Set coolcharacteristiclimit
      *
-     * @ORM\Column(name="LegionellaSchedule", type="integer", nullable=false)
-     */
-    private $legionellaschedule;
-
-    /**
-     * @var float
+     * @param float $coolcharacteristiclimit
      *
-     * @ORM\Column(name="PoolTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $pooltemp;
+    public function setCoolcharacteristiclimit($coolcharacteristiclimit)
+    {
+        $this->coolcharacteristiclimit = $coolcharacteristiclimit;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="CharacteristicSetPointBaseTemp", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $characteristicsetpointbasetemp;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get coolcharacteristiclimit
      *
-     * @ORM\Column(name="DOExtStatus", type="integer", nullable=false)
+     * @return float
      */
-    private $doextstatus;
+    public function getCoolcharacteristiclimit()
+    {
+        return $this->coolcharacteristiclimit;
+    }
 
     /**
-     * @var \DateTime
+     * Set servicestatus
      *
-     * @ORM\Column(name="HeatTimeOff", type="time", nullable=false)
-     */
-    private $heattimeoff;
-
-    /**
-     * @var float
+     * @param integer $servicestatus
      *
-     * @ORM\Column(name="FailureCondensationTemp", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $failurecondensationtemp;
+    public function setServicestatus($servicestatus)
+    {
+        $this->servicestatus = $servicestatus;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="WarningDivMask", type="integer", nullable=false)
-     */
-    private $warningdivmask;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get servicestatus
      *
-     * @ORM\Column(name="FailureDOBuffer", type="integer", nullable=false)
+     * @return integer
      */
-    private $failuredobuffer;
+    public function getServicestatus()
+    {
+        return $this->servicestatus;
+    }
 
     /**
-     * @var integer
+     * Set failureevaporationpress
      *
-     * @ORM\Column(name="FailureAIError", type="integer", nullable=false)
-     */
-    private $failureaierror;
-
-    /**
-     * @var integer
+     * @param float $failureevaporationpress
      *
-     * @ORM\Column(name="HeatIncreaseOff", type="integer", nullable=false)
+     * @return WpData
      */
-    private $heatincreaseoff;
+    public function setFailureevaporationpress($failureevaporationpress)
+    {
+        $this->failureevaporationpress = $failureevaporationpress;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="FailureTimeStampTIME", type="datetime", nullable=false)
-     */
-    private $failuretimestamptime;
+        return $this;
+    }
 
     /**
-     * @var float
+     * Get failureevaporationpress
      *
-     * @ORM\Column(name="FailureTempHeatSourceIn", type="float", precision=10, scale=0, nullable=false)
+     * @return float
      */
-    private $failuretempheatsourcein;
+    public function getFailureevaporationpress()
+    {
+        return $this->failureevaporationpress;
+    }
 
     /**
-     * @var float
+     * Set adcEnabled
      *
-     * @ORM\Column(name="LegionellaTempNominal", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $legionellatempnominal;
-
-    /**
-     * @var float
+     * @param integer $adcEnabled
      *
-     * @ORM\Column(name="DomesticWaterTempHyst", type="float", precision=10, scale=0, nullable=false)
+     * @return WpData
      */
-    private $domesticwatertemphyst;
+    public function setAdcEnabled($adcEnabled)
+    {
+        $this->adcEnabled = $adcEnabled;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="DOBuffer", type="integer", nullable=false)
-     */
-    private $dobuffer;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get adcEnabled
      *
-     * @ORM\Column(name="OperatingState", type="integer", nullable=false)
+     * @return integer
      */
-    private $operatingstate;
+    public function getAdcEnabled()
+    {
+        return $this->adcEnabled;
+    }
 
     /**
-     * @var float
+     * Set adcResult
      *
-     * @ORM\Column(name="PoolTempActual", type="float", precision=10, scale=0, nullable=false)
-     */
-    private $pooltempactual;
-
-    /**
-     * @var integer
+     * @param integer $adcResult
      *
-     * @ORM\Column(name="ServiceHeating", type="integer", nullable=false)
+     * @return WpData
      */
-    private $serviceheating;
+    public function setAdcResult($adcResult)
+    {
+        $this->adcResult = $adcResult;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="DIBuffer", type="integer", nullable=false)
-     */
-    private $dibuffer;
+        return $this;
+    }
 
     /**
-     * @var integer
+     * Get adcResult
      *
-     * @ORM\Column(name="HeatSourceMinT", type="integer", nullable=false)
+     * @return integer
      */
-    private $heatsourcemint;
-
-
+    public function getAdcResult()
+    {
+        return $this->adcResult;
+    }
 }
