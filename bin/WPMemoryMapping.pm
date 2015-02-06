@@ -26,7 +26,6 @@
     'CondensationPress' => { function => 3, addr => 0x03D1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'p condenser', unit => 'bar'},
 
     # Heating (item: Heating)
-    'HeatOff' => { function => 0, addr => 0x03F1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'manual turn off', unit => ''},
     'HeatTimeOn' => { function => 4, addr => 0x0401, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time start', unit => ''},
     'HeatTimeOff' => { function => 4, addr => 0x0411, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time stop', unit => ''},
     'HeatCharacteristicSetPoint' => { function => 4, addr => 0x0421, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T out base', unit => '&deg;C'},
@@ -38,7 +37,6 @@
     'HeatTempHyst' => { function => 4, addr => 0x04E1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'hysteresis', unit => 'K'},
     'RoomTempNominal' => { function => 4, addr => 0x0501, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T room target', unit => '&deg;C'},
     'RoomTempFactor' => { function => 4, addr => 0x0521, size => 0x1, acl => '', type => TYPE_INT, caption => 'T room influence', unit => '%'},
-    'HeatIncreaseOff' => { function => 0, addr => 0x0531, size => 0x1, acl => '', type => TYPE_BOOL, caption => '', unit => ''},
     'HeatIncreaseTimeOn' => { function => 4, addr => 0x0541, size => 0x1, acl => '', type => TYPE_TIME, caption => 'setpt chg start', unit => ''},
     'HeatIncreaseTimeOff' => { function => 4, addr => 0x0551, size => 0x1, acl => '', type => TYPE_TIME, caption => 'setpt chg stop', unit => ''},
     'HeatIncreaseSetPtOffset' => { function => 4, addr => 0x0561, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'setpoint change', unit => 'K'},
@@ -46,7 +44,6 @@
     'AuxilaryMaxDifference' => { function => 4, addr => 0x0591, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'aux. Max diff.', unit => 'K'},
 
     # Cooling (item: Cooling)
-    'CoolOff' => { function => 0, addr => 0x05B1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'manual turn off', unit => ''},
     'CoolTimeOn' => { function => 4, addr => 0x05C1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time start', unit => ''},
     'CoolTimeOff' => { function => 4, addr => 0x05D1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time stop', unit => ''},
     'CoolCharacteristicSetPoint' => { function => 4, addr => 0x05E1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T out base', unit => '&deg;C'},
@@ -58,20 +55,17 @@
     'CoolReturnTempHyst' => { function => 4, addr => 0x06A1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'hysteresis', unit => 'K'},
 
     # Hot Water (item: Hotwater)
-    'DomesticWaterOff' => { function => 0, addr => 0x06C1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'manual turn off', unit => ''},
     'DomesticWaterTimeOn' => { function => 4, addr => 0x06D1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time start', unit => ''},
     'DomesticWaterTimeOff' => { function => 4, addr => 0x06E1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time stop', unit => ''},
     'DomesticWaterTempActual' => { function => 4, addr => 0x06F1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T return real', unit => '&deg;C'},
     'DomesticWaterTempNominal' => { function => 4, addr => 0x0711, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T return target', unit => '&deg;C'},
     'DomesticWaterTempHyst' => { function => 4, addr => 0x0731, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'hysteresis', unit => 'K'},
-    'LegionellaSchedule' => { function => 0, addr => 0x0751, size => 0x8, acl => '', type => TYPE_BITS, caption => 'NEW act MDMDFSSP', unit => ''},
     'LegionellaTimeOn' => { function => 4, addr => 0x0761, size => 0x1, acl => '', type => TYPE_TIME, caption => 'E-NEW Begin', unit => ''},
     'LegionellaTimeOff' => { function => 4, addr => 0x0771, size => 0x1, acl => '', type => TYPE_TIME, caption => 'E-NEW End', unit => ''},
     'LegionellaTempNominal' => { function => 4, addr => 0x0781, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'E-NEW Nominal', unit => ''},
     'DWNumberOfCompressors' => { function => 4, addr => 0x07A1, size => 0x1, acl => '', type => TYPE_INT, caption => 'auxilary compr.', unit => ''},
 
     # Pool (item: Pool)
-    'PoolOff' => { function => 0, addr => 0x07B1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'manual turn off', unit => ''},
     'PoolTimeOn' => { function => 4, addr => 0x07C1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time start', unit => ''},
     'PoolTimeOff' => { function => 4, addr => 0x07D1, size => 0x1, acl => '', type => TYPE_TIME, caption => 'time stop', unit => ''},
     'PoolTempActual' => { function => 4, addr => 0x07E1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T return real', unit => '&deg;C'},
@@ -97,10 +91,6 @@
     # Failure Data (item: Failure)
     'FailureTimeStampTIME' => { function => 4, addr => 0x0991, size => 0xD, acl => '', type => TYPE_DATETIME, caption => 'time', unit => ''},
     'FailureTimeStampDATE' => { function => 4, addr => 0x0A61, size => 0xD, acl => '', type => TYPE_DATETIME, caption => 'date', unit => ''},
-    'FailureOperatingMode' => { function => 0, addr => 0x0B31, size => 0x8, acl => '', type => TYPE_BITS, caption => 'running mode', unit => ''},
-    'FailureDOBuffer' => { function => 0, addr => 0x0B41, size => 0xA, acl => '', type => TYPE_BITS, caption => 'DO-buffer', unit => ''},
-    'FailureDIBuffer' => { function => 0, addr => 0x0B51, size => 0x8, acl => '', type => TYPE_BITS, caption => 'DI-buffer', unit => ''},
-    'FailureAIError' => { function => 0, addr => 0x0B61, size => 0xC, acl => '', type => TYPE_BITS, caption => 'senor', unit => ''},
     'FailureEvaporationPress' => { function => 4, addr => 0x0B71, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'P evaporator', unit => 'bar'},
     'FailureCondensationPress' => { function => 4, addr => 0x0B91, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'P condenser', unit => 'bar'},
     'FailureTempReturn' => { function => 4, addr => 0x0BB1, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'T return', unit => '&deg;C'},
@@ -117,7 +107,6 @@
     'Pincode' => { function => 4, addr => 0x0CC1, size => 0x2, acl => '', type => TYPE_INT, caption => 'PIN-code', unit => ''},
     'SetDefaultSettings' => { function => 4, addr => 0x0CE1, size => 0x1, acl => '', type => TYPE_INT, caption => 'factory reset', unit => ''},
     'SoftwareReset' => { function => 4, addr => 0x0CF1, size => 0x1, acl => '', type => TYPE_INT, caption => 'Software Reset', unit => ''},
-    'DOManualOperatingModeOn' => { function => 0, addr => 0x0D01, size => 0xA, acl => '', type => TYPE_BITS, caption => 'DO-manual on', unit => ''},
     'HeatingUpScreed' => { function => 4, addr => 0x0D11, size => 0x1, acl => '', type => TYPE_INT, caption => 'first heating 7d', unit => ''},
     'ScreedTempNominal' => { function => 4, addr => 0x0D21, size => 0x2, acl => '', type => TYPE_FLOAT, format => "%.2f", caption => 'first heating temp', unit => '&deg;C'},
     'SourcePumpPreRunPeriod' => { function => 4, addr => 0x0D41, size => 0x1, acl => '', type => TYPE_INT, caption => '', unit => 's'},
@@ -130,27 +119,12 @@
     'NDStatus' => { function => 4, addr => 0x0DE1, size => 0x1, acl => '', type => TYPE_INT, caption => 'ND Status', unit => ''},
 
     # Warning/Alarming (item: ErrorEvents)
-    'Failure' => { function => 0, addr => 0x0DF1, size => 0xC, acl => '', type => TYPE_BITS, caption => 'failure', unit => ''},
-    'Interruption' => { function => 0, addr => 0x0E01, size => 0xC, acl => '', type => TYPE_BITS, caption => 'interruption', unit => ''},
-    'WarningsInput' => { function => 0, addr => 0x0E11, size => 0xC, acl => '', type => TYPE_BITS, caption => 'warning source', unit => ''},
-    'WarningsOutput' => { function => 0, addr => 0x0E21, size => 0xC, acl => '', type => TYPE_BITS, caption => 'warning outlet', unit => ''},
-    'WarningsDiv' => { function => 0, addr => 0x0E31, size => 0xC, acl => '', type => TYPE_BITS, caption => 'warning sensors', unit => ''},
-    'WarningsOthers' => { function => 0, addr => 0x0E41, size => 0xC, acl => '', type => TYPE_BITS, caption => 'warning diff.', unit => ''},
-    'WarningInMask' => { function => 0, addr => 0x0E51, size => 0xC, acl => '', type => TYPE_BITS, caption => 'suppr.warn.sourc', unit => ''},
-    'WarningOutMask' => { function => 0, addr => 0x0E61, size => 0xC, acl => '', type => TYPE_BITS, caption => 'suppr.warn.outl.', unit => ''},
-    'WarningDivMask' => { function => 0, addr => 0x0E71, size => 0xC, acl => '', type => TYPE_BITS, caption => 'suppr.warn.sens.', unit => ''},
-    'WarningOthersMask' => { function => 0, addr => 0x0E81, size => 0xC, acl => '', type => TYPE_BITS, caption => 'suppr. warn diff.', unit => ''},
 
     # Communication (item: Communication)
     'CommMode' => { function => 4, addr => 0x0E91, size => 0x1, acl => '', type => TYPE_INT, caption => 'comm. mode', unit => ''},
     'Ringtones' => { function => 4, addr => 0x0EA1, size => 0x1, acl => '', type => TYPE_INT, caption => 'ringtones', unit => ''},
 
     # Default Values (item: Default)
-    'ServiceHeating' => { function => 0, addr => 0x0EB1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'heating mode', unit => ''},
-    'ServiceDomesticWater' => { function => 0, addr => 0x0EC1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'hot water mode', unit => ''},
-    'ServiceCooling' => { function => 0, addr => 0x0ED1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'cooling mode', unit => ''},
-    'ServicePool' => { function => 0, addr => 0x0EE1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'pool mode', unit => ''},
-    'ServiceAuxiliaryHeating' => { function => 0, addr => 0x0EF1, size => 0x1, acl => '', type => TYPE_BOOL, caption => 'step 2', unit => ''},
     'HeatSourceMinT' => { function => 4, addr => 0x0F01, size => 0x1, acl => '', type => TYPE_INT, caption => 'heat source Tmin', unit => ''},
     'Refrigerant' => { function => 4, addr => 0x0F11, size => 0x1, acl => '', type => TYPE_INT, caption => 'refrigerant', unit => ''},
     'NumberOfCompressors' => { function => 4, addr => 0x0F21, size => 0x1, acl => '', type => TYPE_INT, caption => 'num. Compr.', unit => ''},
@@ -176,7 +150,6 @@
     'SetManufSerialNum' => { function => 4, addr => 0x12C1, size => 0x8, acl => '', type => TYPE_STRING, caption => 'set serial nr', unit => ''},
 
     # System (item: System)
-    'OperatingState' => { function => 0, addr => 0x1341, size => 0x8, acl => '', type => TYPE_BITS, caption => 'operating state', unit => ''},
     'DOBuffer' => { function => 1, addr => 0x1351, size => 0xA, acl => '', type => TYPE_BITS, caption => 'DO-buffer', unit => ''},
     'DIBuffer' => { function => 1, addr => 0x1361, size => 0x8, acl => '', type => TYPE_BITS, caption => 'DI-buffer', unit => ''},
     'ADC_Enabled' => { function => 1, addr => 0x1371, size => 0xC, acl => '', type => TYPE_BITS, caption => 'ADC enabled', unit => ''},

@@ -100,7 +100,10 @@ function writeFile($xml_data, $output, $types, $language) {
 		fwrite($f, "\n    # " . toCaption($item, $languageKey) . " (item: " . $item->itemname. ")\n");
 		foreach($item->tag as $tag) {
 			$t = prepareTag($tag, $types, $languageKey); 
-			$type = $t->datatype;
+			if ($t->regplc <= 0) {
+				// Skip tags without a function
+				continue;
+			}
 
 			fwrite($f, "    '" . $t->name . "' => { " .
 				"function => " . $t->regplc . ", " .
