@@ -58,11 +58,11 @@ Netmask: 255.255.255.0
 If you have more networks you would like to access the serial port, add them on the following numbers.
 
 ## Moxa Driver Installation
-For the driver I had to ask on Moxa directly to get a current beta driver that fixed my problems. I use the file npreal2_1.18.1_Build_12051018.tgz. I added it to the repository to have everything you require together.
+For the driver I had to ask on Moxa directly to get a current beta driver that fixed my problems. I use the file npreal2_1.18.35_build_14081817.tgz. I added it to the repository to have everything you require together.
 To install follow the manual I did something like (it is to long ago to remember everything):
 ````
 cd moxa-driver
-tar xzvf npreal2_1.18_Build_12020919.tgz  -C /
+tar xzvf npreal2_1.18.35_build_14081817.tgz -C /
 cd /tmp/moxa
 /tmp/moxa/mxinst
 ... maybe more steps to configure the IP address of your moxa device ...
