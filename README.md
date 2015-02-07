@@ -87,9 +87,17 @@ emerge -av dev-perl/config-general
 
 ## Installation
 Clone the repository using git.
+The files in the repository are using a WPCU.C with the firmware 01.02.00 from 2009.
+If you are using another firmware use the script "bin/modbusXml2MemoryMapping.php" to create a matching mapping for your firmware.
+You will also need to recreate the frontent entity using the script "fontent/createEntityFromDatabase.sh" after you have finished database setup.
+If you are not using the firmeate 01.02.00 search the matching file in the "modbus_xmfiles" directory and type the following:
+```
+cd bin
+php modbusXml2MemoryMapping --source "/opt/wpcu-web/modbus_xmlfiles/_C010200.xml"
+```
 
 ### Setup the database
-Create a new mysql database using phpmyadmin or the console. Replace the string to your liking:
+Create a new mysql (or mariadb) database using phpmyadmin or the console. Replace the string to your liking:
 ```
 mysql -u root -p
 type your password
@@ -123,7 +131,6 @@ type yout password
 
 ### Setup the configfiles
 Copy the file bin/config.dist to bin/config and edit it according your database settings.
-
 Copy the file frontend/config/autoload/doctrine.local.php.dist to frontend/config/autoload/doctrine.local.php and edit it according your database settings.
 
 ### Compile backend
@@ -158,8 +165,9 @@ and you should see a help screen.
 To make sure everything is fine you can execute in the folder bin:
 ```
 $ ./WPgetVal.pl OutdoorTemp
-./readModbus -f3 -a433 -s2 -t1
-T outdoor = 8.244680&deg;C
+OutdoorTemp:
+   - executing: ./readModbus -f3 -a433 -s2 -t1
+   - result: 8.244680&deg;C
 ```
 
 If you get an error message like:
@@ -174,7 +182,7 @@ Maybe you have to enable the modbus protocol on your heating (mine had it enable
 ### Edit crontab to get heating read and written automatically
 Just edit the file /etc/crontab and add the line:
 ```
-*/1 * * * *     idefix  cd /home/idefix/heizung/bin/ && ./WPsetAllValues.pl; ./WPgetAllValues.pl
+*/1 * * * *     niko  cd /opt/wpcu-web/bin/ && ./WPsetAllValues.pl; ./WPgetAllValues.pl
 ```
 
 You maybe have to adapt the user and the path to the application. You must not run the application as root, but make sure that the user has access to the serial interface.
@@ -190,17 +198,21 @@ curl -sS https://getcomposer.org/installer | php
 ```
 
 You should see now that some applications are installed in the frontend folder.
+If you are not using the firmware 01.02.00 you now have to recreate the frontent entity from the database:
+```
+sh ./createEntityFromDatabase.sh
+```
 
 Now we have to configure apache to make the site visible.
 On my local environment the URI would be: http://knx/heating
 
 So we configure apache:
 ```
-DocumentRoot "/home/idefix/heizung/frontend/public"
+DocumentRoot "/opt/wpcu-web/frontend/public"
 
 SetEnv APPLICATION_ENV "development"
 # This should be changed to whatever you set DocumentRoot to.
-<Directory "/home/idefix/heizung/frontend/public">
+<Directory "/opt/wpcu-web/frontend/public">
         # Possible values for the Options directive are "None", "All",
         # or any combination of:
         #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
@@ -222,14 +234,6 @@ SetEnv APPLICATION_ENV "development"
         Order allow,deny
         Allow from all
 </Directory>
-
-Alias /phpmyadmin /var/www/localhost/htdocs/phpmyadmin
-<Directory "/var/www/localhost/htdocs/phpmyadmin">
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Order allow,deny
-        Allow from all
-</Directory>
 ```
 
 You have to adapt to path.
@@ -240,4 +244,5 @@ And you should see your heating on a web page.
 
 Have fun.
 Matthias Fechner <idefix at fechner.net>
+Nikolaus Krismer <niko at krismer.de>
 
