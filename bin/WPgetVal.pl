@@ -17,4 +17,5 @@ my $attr = $ARGV[0];
 print($parameterKey.":\n");
 print("  - executing: ".$prog."\n");
 my $value = &readParameter(\%wp_memory, \%dataTypes, $attr);
-print("  - result: ".$value.$wp_memory{$parameterKey}{unit}."\n");
+my $unit = \%wp_memory{$attr}{unit};
+print("  - result: " . $value . $unit . "\n");
