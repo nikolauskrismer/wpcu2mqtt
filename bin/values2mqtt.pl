@@ -21,6 +21,9 @@ my $mqtt_username = $config{'user'};
 my $mqtt_password = $config{'password'};
 my $mqtt_topic = $config{'topic'};
 
+# Allow unencrypted connection with credentials
+$ENV{MQTT_SIMPLE_ALLOW_INSECURE_LOGIN} = 1;
+
 my $mqtt = Net::MQTT::Simple->new($mqtt_server . ":" . $mqtt_port);
 # Depending if authentication is required, login to the broker
 if ($mqtt_username and $mqtt_password) {
