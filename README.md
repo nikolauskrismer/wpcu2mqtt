@@ -1,5 +1,3 @@
-DEPRECATED in favor of https://github.com/nikolauskrismer/wpcu2mqtt
-
 # Heating visualization of a Waterkotte WPCU.C
 
 ## Introduction
