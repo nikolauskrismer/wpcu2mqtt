@@ -14,7 +14,6 @@ use vars qw(%wp_memory %dataTypes);
 if ( $#ARGV != 0 ) { die "Usage: $0 <attribute>\n"; }
 my $attr = $ARGV[0];
 
-print($parameterKey.":\n");
-print("  - executing: ".$prog."\n");
+print($attr . ":\n");
 my $value = &readParameter(\%wp_memory, \%dataTypes, $attr);
 print("  - result: " . $value . $wp_memory{$attr}{unit} . "\n");
