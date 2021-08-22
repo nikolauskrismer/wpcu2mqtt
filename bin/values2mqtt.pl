@@ -34,11 +34,15 @@ if ($mqtt_username and $mqtt_password) {
 my $prog;
 my %values;
 foreach ( keys %wp_memory ) {
-	print("Querying key: " . $_);
+	print("  - querying key: " . $_ . "\n");
 	$values{$_} = &readParameter( \%wp_memory, \%dataTypes, $_ );
+	print("  - result: ".$values{$_}.$wp_memory{$parameterKey}{unit}."\n");
+
+	print("  - publishing to mqtt...")
 	$mqtt->publish($mqtt_topic . "/" . $_, $values{$_});
 	# or:
 	# $mqtt->retain($mqtt_topic . "/" . $_, $values{$_});
+	print(" done\n");
 }
 
 $mqtt->disconnect();
