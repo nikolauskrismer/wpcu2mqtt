@@ -1,8 +1,6 @@
+DEPRECATED in favor of https://github.com/nikolauskrismer/wpcu2mqtt
+
 # Heating visualization of a Waterkotte WPCU.C
-
-## Whats new?
-
-* First public version
 
 ## Introduction
 Heating visualization is a tool that read/write values from a Waterkotte heating with a WPCU.C attached.
