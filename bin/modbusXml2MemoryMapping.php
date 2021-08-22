@@ -68,7 +68,7 @@ function prepareTag($tag, $types, $languageKey) {
 }
 
 function printUsage() {
-        echo "Usage: php modbusXml2MemoryMapping --source=\"/path/to/waterkotte_modebus/_C<myfirmwareversion>.xml\" [--output=\"WPMemoryMappingTest.pm\" --language=\"en\"]\n";
+	echo "Usage: php modbusXml2MemoryMapping --source=\"/path/to/waterkotte_modebus/_C<myfirmwareversion>.xml\" [--output=\"WPMemoryMappingTest.pm\" --language=\"en\"]\n";
 }
 
 function toCaption($array, $languageKey) {

@@ -3,6 +3,3 @@ writeModbus
 *.o
 *.a
 *~
-config
-config_fhem
-sql
