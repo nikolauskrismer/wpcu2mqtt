@@ -32,7 +32,7 @@ my %values;
 my $value;
 foreach ( keys %wp_memory ) {
 	$value = &readParameter( \%wp_memory, \%dataTypes, $_ );
-	$values{$_} = $value
+	$values{$_} = $value;
 
 	$mqtt->publish($mqtt_topic . "/" . $_, $value);
 	# or:
