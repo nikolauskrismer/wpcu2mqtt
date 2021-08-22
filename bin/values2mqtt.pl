@@ -36,8 +36,7 @@ my %values;
 foreach ( keys %wp_memory ) {
 	print("  - querying key: " . $_ . "\n");
 	$values{$_} = &readParameter( \%wp_memory, \%dataTypes, $_ );
-	my $unit = \%wp_memory{$_}{unit};
-	print("  - result: " . $values{$_} . $unit . "\n");
+	print("  - result: " . $values{$_} . $wp_memory{$_}{unit} . "\n");
 
 	print("  - publishing to mqtt...")
 	$mqtt->publish($mqtt_topic . "/" . $_, $values{$_});
